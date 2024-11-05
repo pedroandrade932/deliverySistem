@@ -1,0 +1,10 @@
+Palleta (#000000)
+
+principal: #E6233F
+secundária: #E6DD22
+complementar: #22AAE6
+Transição: #666442
+
+
+Preto: #000000
+Branco: #FFFFFF
