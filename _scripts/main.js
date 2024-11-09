@@ -27,6 +27,19 @@ janelaModal.addEventListener('click', (element) => {
     }
 });
 
+//Funcionalidade da Janela modal dos alimentos (info)
+const modalInfo = document.getElementById('janelaModalInfo');
+function openInfo(){
+    modalInfo.classList.toggle('ativeInfo');
+    modalInfo.addEventListener('click', (element) => {
+        console.log(element.target.id);
+        if(element.target.id === 'closeInfo' || element.target.id === 'modalInfo'){
+            modalInfo.classList.remove('ativeInfo');
+        }
+    });
+}
+
+
 //Funcionalidade do filter
 const iconIconFilter = document.getElementById('iconFilter');
 function openFilter(){
@@ -41,10 +54,12 @@ iconIconFilter.addEventListener('click', () => {
 
 const menuDrop = document.querySelectorAll('.openOption');
 const contentDrop = document.querySelectorAll('.menuDropdown');
+const iconOp = document.querySelectorAll('.iconOption');
 menuDrop.forEach((elemento, index) => {
     elemento.addEventListener('click', () => {
         contentDrop[index].classList.toggle('ativeDrop');
-        console.log(contentDrop[index]);
+        console.log(contentDrop[index].classList.value);
+        iconOp[index].classList.toggle('iconAnimate');
     });
 });
 
