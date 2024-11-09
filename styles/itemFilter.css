@@ -1,0 +1,44 @@
+:root{
+    --header: #F92140;
+    --cor-secundaria: #810012; 
+    --fonte-principal: 'junge';
+    --cor-filterBar: #b7b7b78c;
+}
+.itemFilter{
+    list-style: none;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+}
+.itemFilter li{
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid white;
+}
+.itemFilter li:hover{
+    border: 1px solid var(--cor-secundaria);
+    transition: .2s ease-in-out;
+}
+.menuDropdown{
+    position: sticky;
+    background-color: var(--cor-filterBar);
+    width: 100%;
+    left: 0;
+    backdrop-filter: blur(4px);
+    z-index: 1;
+    border-radius: 10px;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: .4s cubic-bezier(0.89, -0.01, 0, 1.22);
+}
+.menuDropdown.ativeDrop{
+    height: 200px;
+    visibility: visible;
+}

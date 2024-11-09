@@ -1,13 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/homePage.css">
+    <link rel="stylesheet" href="styles/itemFilter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
+
 <body>
-    <h1>Em Manutenção</h1>
-    <hr>
-    <p>Este site está em construção ou em manutenção</p>
+    <header id="header">
+        <div class="logo">
+            <img src="_imagens/sistema/logo.png" alt="" height="80px">
+        </div>
+        <div class="icons">
+            <div class="searchBar">
+                <input class="search" id="search" type="search" name="" id="" placeholder="Diga lá, moral...">
+            </div>
+            <div class="lupa" id="lupa">
+                <span class="material-symbols-outlined icon">
+                    search
+                </span>
+            </div>
+            <div class="carrinho">
+                <span class="material-symbols-outlined icon">
+                    shopping_cart
+                </span>
+            </div>
+            <div class="perfil" onclick="openPerfil()">
+                <span class="material-symbols-outlined icon">
+                    account_circle
+                </span>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+        <section class="banner">
+            <img src="_imagens/sistema/banner_home_page.png" alt="">
+        </section>
+        <section class="filters">
+            <div class="filterMobile" onclick="openFilter()">
+                <div class="iconFilter" id="iconFilter">
+                    <span class="lineFilter lineFilter01"></span>
+                    <span class="lineFilter lineFilter02"></span>
+                    <span class="lineFilter lineFilter03"></span>
+                </div>
+            </div>
+            <div class="container-filters" id="content-filter">
+                <div class="option">
+                    <span>
+                        <h2 class="openOption">Tipo de Prato</h2>
+                        <div class="menuDropdown">
+                            <ul class="itemFilter">
+                                <li>Pratos Principais</li>
+                                <li>Saladas</li>
+                                <li>Bebidas</li>
+                            </ul>
+                        </div>
+                    </span>
+                    <span class="material-symbols-outlined iconOption" data-drop="open">
+                        arrow_drop_down
+                    </span>
+                </div>
+                <div class="option"> 
+                    <span>
+                        <h2 class="openOption">Tipos de culinárias</h2>
+                        <div class="menuDropdown" id="menuDrop">
+                            <ul class="itemFilter">
+                                <li>Italiana</li>
+                                <li>Japonesa</li>
+                                <li>Brasileira</li>
+                            </ul>
+                        </div>
+                    </span>
+                    <span class="material-symbols-outlined iconOption">
+                        arrow_drop_down
+                    </span>
+                </div>
+                <div class="option">
+                    <span>
+                        <h2 class="openOption">Preferências Alimentares</h2>
+                        <div class="menuDropdown">
+                            <ul class="itemFilter">
+                                <li>Vegetariano</li>
+                                <li>Vegano</li>
+                                <li>Sem Glúten</li>
+                            </ul>
+                        </div>
+                    </span>
+                    <span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section class="foods">
+            <div class="titleFoods">
+                <h1>Comidas Rápidas e Populares</h1>
+            </div>
+            <div class="containerFoods">
+                <div class="cardFoods">
+                    <div class="imgFood">
+                        <img src="_imagens/sistema/cardsFood/hamburguer-artesanal-scaled.jpg" alt="" height="200px">
+                    </div>
+                    <div class="description">
+                        <div class="nameFood">
+                            <h3>Hambuerguer Artesanal</h3>
+                        </div>
+                        <div class="valueFood">
+                            <h2>R$24,99</h2>
+                            <span class="line"></span>
+                            <h2>20min</h2>
+                        </div>
+                        <div class="btnInfo">
+                            <button>Info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="janelaModal" id="janelaModal">
+        <div class="modal" id="modal">
+            <div class="modalBody" id="modalBody">
+                <div id="btnClose">
+                    <button class="close" id="close">X</button>
+                </div>
+                <div class="contentPerson">
+                    <div class="person">
+                        <div class="iconPerson">
+                            <span class="material-symbols-outlined user">
+                                account_circle
+                            </span>
+                        </div>
+                        <div class="name">
+                            <h1>Name</h1>
+                        </div>
+                    </div>
+                    <div class="optionPerson">
+                        <ul>
+                            <li>
+                                <a href="">Pedidos</a>
+                            </li>
+                            <li>
+                                <a href="">Conta</a>
+                            </li>
+                            <li>
+                                Configurações
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copy">
+            SODEF &copy;2024
+        </div>
+    </footer>
+    <script src="_scripts/main.js"></script>
 </body>
+
 </html>
