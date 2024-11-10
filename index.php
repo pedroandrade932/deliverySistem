@@ -32,11 +32,11 @@
 
 # Dados de conexão
 $host = "localhost";
-$username = "ialuana_tocomfome_root";
-$password = "<Ma3t3mcaf3?>";
+$username = "root";
+$password = "";
 
 # Nome do bd
-$dbase = "ialuana_tocomfome";
+$dbase = "tocomfome";
 
 try {
     $comment = $_POST["msg"];
