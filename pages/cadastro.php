@@ -1,7 +1,7 @@
 <?php
-include '_php/crypto.php';
-include '_php/id_user.php';
-include '_php/crop_image.php';
+include '../_php/crypto.php';
+include '../_php/id_user.php';
+include '../_php/crop_image.php';
 session_start();
 
 # Dados de conexão
@@ -72,8 +72,8 @@ try {
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>Tô Com Fome - Validação de Email</title>
-                        <link rel="stylesheet" href="styles/logonStyle.css">
-                        <link rel="shortcut icon" href="_imagens/sistema/logo.png" type="image/x-icon">
+                        <link rel="stylesheet" href="../styles/logonStyle.css">
+                        <link rel="shortcut icon" href="../_imagens/sistema/logo.png" type="image/x-icon">
                         <meta http-equiv="refresh" content="0;URL=validation" />
                     </head>
                     <body>
@@ -99,8 +99,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tô Com Fome - Cadastro</title>
-    <link rel="stylesheet" href="styles/logonStyle.css">
-    <link rel="shortcut icon" href="_imagens/sistema/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/logonStyle.css">
+    <link rel="shortcut icon" href="../_imagens/sistema/logo.png" type="image/x-icon">
 </head>
 <header></header>
 <body id = "validation">

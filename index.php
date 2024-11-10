@@ -101,7 +101,7 @@ try {
                                 </div>
                             </form>';
                         }else{
-                            echo "<h3 style='text-align:center'>Para fazer um cometário, <a href='cadastro'>cadastre-se</a> ou <a href='login'>entre na sua conta</a></h3>";
+                            echo "<h3 style='text-align:center'>Para fazer um cometário, <a href='pages/cadastro'>cadastre-se</a> ou <a href='pages/login'>entre na sua conta</a></h3>";
                         }
                     ?>
                 </div>
@@ -213,7 +213,7 @@ try {
                 }else{
                     echo '
                     <div class="perfil login">
-                        <a class="btn-logon" href="cadastro.php">
+                        <a class="btn-logon" href="pages/cadastro.php">
                             Cadastro/Login
                         </a>
                     </div>';

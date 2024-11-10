@@ -1,7 +1,7 @@
 <?php
 //-- Funções Legais
-include '_php/is_email.php';
-include '_php/crypto.php';
+include '../_php/is_email.php';
+include '../_php/crypto.php';
 session_start(); // Inicia a sessão
 
 # Dados de conexão
@@ -55,7 +55,7 @@ try {
             //}else {
                 $membro = false;
             //}
-            if (!file_exists("_imagens/users/$user_img")){
+            if (!file_exists("../_imagens/users/$user_img")){
                 $user_img = 'LUNARIS.png';
             }
             if ($nomecad == $nome){
@@ -106,8 +106,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tô Com Fome - Entrar</title>
-    <link rel="stylesheet" href="styles/logonStyle.css">
-    <link rel="shortcut icon" href="_imagens/sistema/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/logonStyle.css">
+    <link rel="shortcut icon" href="../_imagens/sistema/logo.png" type="image/x-icon">
 </head>
 <body id = "validation">
     <main>

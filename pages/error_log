@@ -1,0 +1,16 @@
+[10-Nov-2024 22:34:01 UTC] PHP Warning:  Undefined array key "user_name" in /home/ialuana/tocomfome.ialuana.com.br/pages/login.php on line 17
+[10-Nov-2024 22:34:01 UTC] PHP Warning:  Undefined array key "password" in /home/ialuana/tocomfome.ialuana.com.br/pages/login.php on line 18
+[10-Nov-2024 22:34:04 UTC] PHP Warning:  Undefined array key "user_name" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 16
+[10-Nov-2024 22:34:04 UTC] PHP Warning:  Undefined array key "email" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 17
+[10-Nov-2024 22:34:04 UTC] PHP Warning:  Undefined array key "password" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 18
+[10-Nov-2024 22:34:04 UTC] PHP Warning:  Undefined array key "picture" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 19
+[10-Nov-2024 22:34:49 UTC] PHP Warning:  Undefined array key "user_name" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 16
+[10-Nov-2024 22:34:49 UTC] PHP Warning:  Undefined array key "email" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 17
+[10-Nov-2024 22:34:49 UTC] PHP Warning:  Undefined array key "password" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 18
+[10-Nov-2024 22:34:49 UTC] PHP Warning:  Undefined array key "picture" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 19
+[10-Nov-2024 22:34:52 UTC] PHP Warning:  Undefined array key "user_name" in /home/ialuana/tocomfome.ialuana.com.br/pages/login.php on line 17
+[10-Nov-2024 22:34:52 UTC] PHP Warning:  Undefined array key "password" in /home/ialuana/tocomfome.ialuana.com.br/pages/login.php on line 18
+[10-Nov-2024 22:35:07 UTC] PHP Warning:  Undefined array key "user_name" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 16
+[10-Nov-2024 22:35:07 UTC] PHP Warning:  Undefined array key "email" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 17
+[10-Nov-2024 22:35:07 UTC] PHP Warning:  Undefined array key "password" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 18
+[10-Nov-2024 22:35:07 UTC] PHP Warning:  Undefined array key "picture" in /home/ialuana/tocomfome.ialuana.com.br/pages/cadastro.php on line 19

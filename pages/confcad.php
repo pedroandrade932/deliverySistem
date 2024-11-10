@@ -8,7 +8,7 @@ $nome = $_SESSION['user_log'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de usuário</title>
-    <link rel = "stylesheet" href = "styles/styleConfcad.css">
+    <link rel = "stylesheet" href = "../styles/styleConfcad.css">
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@ $nome = $_SESSION['user_log'];
     <main>
         <div class="container">
             <div class="popup" id="popup">
-                <img src="_imagens/sistema/confirm_icon.png">
+                <img src="../_imagens/sistema/confirm_icon.png">
                 <h2>Cadastro realizado com sucesso!</h2>
                 <p>Olá, <?php echo "$nome";?>. Obrigado por criar uma conta na Tô Com Fome! Desejamos um bom apetite!</p>
                 <p>Você será automaticamente logado na sua conta após alguns segundos.</p><br>
@@ -33,7 +33,7 @@ window.onload = function() {
 }
 
 setTimeout(function() {
-    window.location.href = "index.php";
+    window.location.href = "../index.php";
 }, 5000);
 
 
