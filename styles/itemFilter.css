@@ -1,0 +1,196 @@
+:root{
+    --header: #F92140;
+    --cor-secundaria: #810012; 
+    --fonte-principal: 'junge';
+    --cor-filterBar: #b7b7b78c;
+}
+.itemFilter{
+    list-style: none;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+}
+.itemFilter li{
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid white;
+}
+.itemFilter li:hover{
+    border: 1px solid var(--cor-secundaria);
+    transition: .2s ease-in-out;
+}
+.menuDropdown{
+    position: sticky;
+    background-color: var(--cor-filterBar);
+    width: 100%;
+    left: 0;
+    backdrop-filter: blur(4px);
+    z-index: 1;
+    border-radius: 10px;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: .4s cubic-bezier(0.89, -0.01, 0, 1.22);
+}
+.menuDropdown.ativeDrop{
+    height: 200px;
+    visibility: visible;
+    transform: rotateX(360deg);
+    height: 100%;
+}
+.iconOption{
+    transition: .4s ease-in-out;
+}
+.iconOption.iconAnimate .open{
+   font-size: 0;
+}
+.iconOption .restaurant{
+    font-size: 0;
+}
+.iconOption .open{
+    transition: .4s ease-in-out;
+}
+.iconOption .restaurant{
+    transition: .4s ease-in-out;
+}
+.iconOption.iconAnimate .restaurant{
+    font-size: 2vw;
+    overflow: visible;
+    visibility: visible;
+}
+.itemFilter{
+    height: 0;
+    transition: .3s ease-in-out;
+}
+.menuDropdown.ativeDrop .itemFilter{
+    height: 100%;
+}
+.contentPerson{
+    background-image: url(../_imagens/sistema/footer.png);
+    background-size: cover;
+}
+.janelaModalInfo{
+    background-color: rgba(192, 192, 192, 0.493);
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+.janelaModalInfo.ativeInfo{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.img-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-info{
+    display: grid;
+    grid-template-rows: 1fr 1fr 6% 1fr;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+}
+.destaques{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-family: var(--fonte-principal);
+}
+.destaques-content{
+    width: 50%;
+}
+#btnClose-modalInfo{
+    position: absolute;
+    right: 0;
+}
+.janelaModalInfo .modalInfo{
+    /* width: 100%; */
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* background-color: white; */
+    border-radius: 20px;
+    transition: .5s;
+}
+.janelaModalInfo.ativeInfo .modalBody-info{
+    height: 100%;
+    width: 60%;
+    position: relative;
+}
+.janelaModalInfo{
+    background-color: rgba(0, 0, 0, 0.541);
+    backdrop-filter: blur(10px);
+}
+
+.content{
+    position: relative;
+}
+.img-top{
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    background-image: linear-gradient(to left, #5C010E, #810012);
+}
+.descriptionFood{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-family: var(--fonte-principal);
+}
+.descriptionFood p{
+    width: 50%;
+    text-indent: 15px;
+}
+.btnComprar{
+    display: flex;
+    justify-content: center;
+}
+.btnBuy{
+    height: 30px;
+    border-radius: 5px;
+    width: 120px;
+    border: 1px solid white;
+    color: white;
+    background-image: linear-gradient(45deg, #810012, #E6233F);
+    cursor: pointer;
+}
+@keyframes animationInfo{
+    from{
+        transform: translate3d(0, 0, 30px);
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+    }
+}
+@media(max-width: 550px){
+    .iconOption.iconAnimate .restaurant{
+        font-size: 6vw;
+    }
+    .openOption{
+        font-size: 4vw;
+    }
+    .option{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .janelaModalInfo.ativeInfo{
+        z-index: 9;
+    }
+    .content-info{
+        display: flex;
+        flex-direction: column;
+    }
+}

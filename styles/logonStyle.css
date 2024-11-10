@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+:root {
+    --color_red: #e2372d;
+    --color_red2: #a6342d;
+    --color_red3: #6a312d;
+	--color_blue: #3C91E6;
+	--color_yellow: #FFCE26;
+    --color_back: #810012;
+    --color_back2: #F92140;
+    --color_back3: #191b1b;
+    --color_white: #ffffff;
+    --color_black: #000000;
+    --light: #F9F9F9;
+    --dark: #342E37;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Aqui é o corpo do texto */
+
+#content main {
+    margin: 10px auto 0px auto;
+    max-width: 1200px;
+}
+
+/* Aqui fica o estilos do formulários de Cadastro/Login */
+
+
+div.form {
+    text-align: center;
+    justify-content: center;
+    height: 570px;
+    max-width: 510px;
+}
+
+@media screen and (max-width: 420px) {
+  div.form {
+	height: 650px;
+  }
+}
+
+
+div.val {
+    text-align: center;
+    justify-content: center;
+    height: 330px;
+}
+
+
+@keyframes joga_de_lado {
+    0% {
+        position: absolute;
+        left: 35vw;
+        opacity: 100%;
+    }
+
+    8% {
+        opacity: 0%;
+    }
+
+    100% {
+        left: -100%;
+        opacity: 0%;
+    }
+}
+
+@keyframes joga_de_lado2 {
+    0% {
+        left: 60%;
+        opacity: 0%;
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    100% {
+        left: 0px;
+        position: relative;
+        opacity: 100%;
+    }
+}
+
+#picture_input {
+    display: none;
+}
+
+.picture {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background-color: var(--color_white);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    border-radius: 50%;
+    overflow-y: hidden;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: 0.2s;
+    margin: auto;
+    box-shadow: 0px 1px 10px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form1-ani {
+    left: 0px;
+    position: relative;
+    opacity: 100%;
+}
+
+.notf {
+    opacity: 0%;
+    background-color: var(--color_red);
+    color: var(--color_white);
+    padding: 5px;
+    margin: 5px 0px 5px 0px;
+    border-radius: 10px;
+}
+
+#avante {
+    margin-top: 15px;
+}
+
+.form2-ani {
+    display: none;
+    left: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.form1-ani.active {
+    animation: joga_de_lado 2s linear;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    position: absolute;
+}
+
+.form2-ani.active {
+    display: block;
+    animation: joga_de_lado2 0.3s linear;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+
+.form {
+    margin: auto;
+    justify-content: center;
+    padding: 10px;
+    max-width: 500px;
+    min-height: 300px;
+    margin-top: calc(50vh - 285px);
+    background-color: var(--color_white);
+    border-radius: 20px;
+}
+
+#validation {
+    background-color: var(--color_back);
+}
+
+#imgc {
+	position: absolute;
+	line-height: 190px;
+}
+
+.picture:hover {
+    color: #888;
+}
+
+.picture_img {
+    width: 100%;
+    z-index: 1;
+    overflow-y: auto;
+}
+
+.campo {
+    background-color: var(--color_white);
+    color: var(--color_black);
+    padding: 5px;
+    outline: none;
+    margin: 0px auto 20px auto;
+    outline: none;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    padding: 0 60px 0 20px;
+    font-size: 18px;
+    box-shadow: 0px 1px 10px 6px rgba(0, 0, 0, 0.1);
+}
+
+#obri {
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+}
+
+.button {
+    color: var(--color_white);
+    background-color: var(--color_back2);
+    text-decoration: none;
+    padding: 8px;
+    border-style: none;
+    border-radius: 10px 10px 10px 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: var(--color_red);
+    color: var(--color_white);
+    cursor: pointer;
+}
+
