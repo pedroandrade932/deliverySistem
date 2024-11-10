@@ -189,6 +189,12 @@
     .janelaModalInfo.ativeInfo{
         z-index: 9;
     }
+    .janelaModalInfo.ativeInfo .modalBody-info{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        padding-top: 30px;
+    }
     .content-info{
         display: flex;
         flex-direction: column;

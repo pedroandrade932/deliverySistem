@@ -82,7 +82,30 @@
     align-items: center;
     font-size: 2vw;
 }
-
+.btn-logon{
+    background-color: rgb(197, 18, 48);
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-family: var(--fonte-principal);
+    border: 1px solid white;
+}
+.btn-logon:hover{
+    box-shadow: 0px 0px 11px 0px white;
+    transition: .6s ease-in-out;
+    animation: btn-logonAnimate 2s cubic-bezier(0.84, -0.24, 0.58, 1) infinite;
+}
+@keyframes btn-logonAnimate {
+    from{
+        box-shadow: 0px 0px 0px 0px white;
+        transition: 2s;
+    }
+    to{
+        box-shadow:  0px 0px 20px 5px white;
+        transition: 2s;
+    }
+}
 .search{
     height: 35px;
     border-radius: 10px;
@@ -369,6 +392,7 @@ footer{
     width: 0 !important;
     transition: .2s;
 }
+
 /* Animação da lupa */
 @keyframes iconAnimateLupa {
     0%{
@@ -483,6 +507,9 @@ footer{
     .banner img{
         width: 100%;
         height: 100%;
+    }
+    .img-top img{
+        max-width: 200px;
     }
     #header{
         grid-template-columns: 1fr;
