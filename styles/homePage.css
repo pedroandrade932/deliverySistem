@@ -14,7 +14,7 @@
 }
 #header{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     background-color: var(--header);
     padding: 25px;
     border-bottom: 1px solid white;
@@ -82,6 +82,7 @@
     align-items: center;
     font-size: 2vw;
 }
+
 .btn-logon{
     background-color: rgb(197, 18, 48);
     padding: 10px;
@@ -515,12 +516,6 @@ footer{
         grid-template-columns: 1fr;
         justify-items: center;
     }
-    .icons{
-        align-items: center;
-        gap: 15px;
-        padding: 10px;
-        width: 100%;
-    }
     .janelaModal.openModal .modalBody{
         display: flex;
         z-index: 999;
@@ -568,5 +563,37 @@ footer{
         visibility: hidden;
         overflow: hidden;
         transition: .4s cubic-bezier(0.89, -0.01, 0, 1.22);
+    }
+    .icons{
+        grid-template-columns: 42% 32% 14%;
+    }
+    
+}
+@media (max-width: 800px) {
+    .searchBar{
+        width: 100%;
+    }
+    .icons{
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 46% 30% 14%;
+        justify-items: center;
+        row-gap: 15px;
+        column-gap: 21px;
+    }
+    .perfil{
+        grid-column-end: -1;
+    }
+    .lupa{
+        display: flex;
+        justify-content: center;
+    }
+    .perfil.login{
+        display: flex;
+        grid-column-end: -2;
     }
 }

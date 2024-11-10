@@ -87,6 +87,8 @@
     display: flex;
     width: 100%;
     height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .img-top{
     display: flex;
@@ -94,8 +96,6 @@
     align-items: center;
 }
 .content-info{
-    display: grid;
-    grid-template-rows: 1fr 1fr 6% 1fr;
     background-color: #D9D9D9;
     border-radius: 15px;
 }
