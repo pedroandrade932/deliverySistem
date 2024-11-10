@@ -79,6 +79,7 @@
 }
 .titleChat h1{
     text-align: center;
+    padding: 30px;
 }
 .content-forms{
     opacity: 0;
