@@ -9,7 +9,7 @@
 
 :root{
     --header: #F92140;
-    --cor-secundaria: #810012; 
+    --cor-secundaria: #810012;
     --fonte-principal: 'junge';
 }
 #header{
@@ -40,6 +40,38 @@
     color: white;
     font-size: 40px !important;
     cursor: pointer;
+}
+
+.icon-login {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color_white);
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    border-radius: 50%;
+    overflow-y: hidden;
+    cursor: pointer;
+    margin: 5px;
+    font-family: sans-serif;
+    transition: 0.2s;
+}
+
+.icon-login-modal {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-color: var(--color_white);
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    border-radius: 50%;
+    overflow-y: hidden;
+    cursor: pointer;
+    margin: 5px;
+    font-family: sans-serif;
+    transition: 0.2s;
 }
 
 .banner, .banner img{
