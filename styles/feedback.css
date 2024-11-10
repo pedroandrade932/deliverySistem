@@ -79,6 +79,7 @@
 }
 .titleChat h1{
     text-align: center;
+    padding: 30px;
 }
 .content-forms{
     opacity: 0;
@@ -157,6 +158,10 @@ label{
 .depoimentos-container .slider{
     padding: 40px 60px;
     cursor: grab;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .depoimentos-container .slider:active{
     cursor: grabbing;
@@ -271,5 +276,5 @@ label{
     .janelaFeedback.ativeChat .content-chat{
         height: 100%;
         width: 100%;
-    }
+    }  
 }

@@ -86,3 +86,29 @@ function openFeed(){
     contentForms.classList.toggle('desativeForms');
     contentChat.classList.toggle('ativeFeed');
 }
+
+
+
+
+const janelaFeedBack = document.getElementById('janelaFeedback');
+const iconFeed = document.getElementById('iconFeed');
+function openChat(){
+    janelaFeedBack.classList.add('ativeChat');
+}
+janelaFeedBack.addEventListener('click', (object) => {
+    console.log(object.target.id);
+    if(object.target.id === 'btnClose-feed' || object.target.id === 'modalFeedback'){
+        janelaFeedBack.classList.remove('ativeChat');
+    }
+    if(object.target.id === 'iconFeed'){
+        iconFeed.classList.toggle('animateIcon');
+    }
+});
+
+//Funcionalidade da abertura dos comentários na janela de feedback
+const contentForms = document.getElementById('contentForms');
+const contentChat = document.getElementById('contentChat');
+function openFeed(){
+    contentForms.classList.toggle('desativeForms');
+    contentChat.classList.toggle('ativeFeed');
+}
