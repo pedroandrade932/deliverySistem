@@ -212,7 +212,7 @@ try {
                     </div>";
                 }else{
                     echo '
-                    <div class="perfil">
+                    <div class="perfil login">
                         <a class="btn-logon" href="cadastro.php">
                             Cadastro/Login
                         </a>
