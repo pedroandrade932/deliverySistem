@@ -1,4 +1,6 @@
 <?php
+    //-- inclui a criptografia
+    include '_php/crypto.php';
     //-- inicia a sessão
     session_start();
 
@@ -6,10 +8,14 @@
     $logon = false;
 
     //-- Verifica se existe uma sessão ativa (se existir, pega as informações da conta)
+    $userid;
     $nome;
     $email;
     $foto;
     foreach ($_SESSION as $key=>$val){
+        if ($key == 'user_id'){
+            $userid = $val;
+        }
         if ($key == 'user_log'){
             $nome = $val;
             $logon = true;
@@ -22,6 +28,34 @@
         }
     }
 
+
+
+# Dados de conexão
+$host = "localhost";
+$username = "ialuana_tocomfome_root";
+$password = "<Ma3t3mcaf3?>";
+
+# Nome do bd
+$dbase = "ialuana_tocomfome";
+
+try {
+    $comment = $_POST["msg"];
+    $datah = date('Y-m-d');
+    $conn = new PDO("mysql:host=$host;dbname=$dbase", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if ($comment != ''){
+        $data = $conn->prepare('SELECT * FROM usuario WHERE nome = :nome');
+        $data->execute(array('nome' => $nome));
+        $result = $data->fetchAll();
+        $data = $conn->query("INSERT INTO msgs (iduser, msg, data_envio) VALUES ($userid, '$comment', '$datah')");
+        
+    }unset($data);
+
+}catch(PDOException $e) {
+    $z='';
+    echo 'ERROR: ' . $e->getMessage();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,11 +66,115 @@
     <title>Tô Com Fome - Bem vindo!</title>
     <link rel="stylesheet" href="styles/homePage.css">
     <link rel="stylesheet" href="styles/itemFilter.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/feedback.css">
+    <link rel="stylesheet" href="styles/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="shortcut icon" href="_imagens/sistema/logo.png" type="image/x-icon">
 </head>
 
 <body>
+    <!-- janela modal com o forms e os comentários -->
+    <div class="janelaFeedback" id="janelaFeedback">
+        <!-- janela interna interna da janela modal -->
+        <div class="modalFeedback" id="modalFeedback">
+            <div class="modal-feedback-body" id="feedBody">
+                <!-- formulário -->
+                <div class="content-forms" id="contentForms">
+                    <div class="titleChat">
+                        <h1>Tô com fome chat</h1>
+                    </div>
+                    <br>
+                    <?php
+                        if($logon){
+                            echo '
+                            <form class="form" action="index" method="post">
+                                <div class="mensagem-form">
+                                    <label for="msg">
+                                        <span>O que achou da gente?</span>
+                                        <textarea name="msg" id="msg" placeholder="Mensagem..."></textarea>
+                                    </label>
+                                </div>
+                                <!-- botão enviar -->
+                                <div class="btn-submit">
+                                    <input class="submit" type="submit" value="Enviar">
+                                </div>
+                            </form>';
+                        }else{
+                            echo "<h3 style='text-align:center'>Para fazer um cometário, <a href='cadastro'>cadastre-se</a> ou <a href='login'>entre na sua conta</a></h3>";
+                        }
+                    ?>
+                </div>
+                <!-- janela de comentários -->
+                <section class="content-chat mySwiper" id="contentChat">
+                    <div class="depoimentos-container swiper-wrapper">
+                        <!-- sliders com os comentários -->
+                            <?php
+                                //-- Busca todos os comentarios
+                                
+                                try {
+                                    $data2 = $conn->prepare('SELECT * FROM msgs');
+                                    $data2->execute();
+                                    $result = $data2->fetchAll();
+                                    if (count($result)) {
+                                        foreach($result as $row) {
+                                            $iduser = $row[1];
+                                            $msg = $row[2];
+                                            $data_envio = $row[3];
+                                            
+                                            $data3 = $conn->prepare('SELECT nome, foto FROM usuario WHERE iduser = :id');
+                                            $data3->execute(array('id' => $iduser));
+                                            $result2 = $data3->fetchAll();
+                                            if ( count($result2) ) {
+                                                foreach($result2 as $row2) {
+                                                    $nome_comment = $row2[0];
+                                                    $foto_comment = $row2[1];
+                                                }
+                                            }
+                                            echo "
+                                            <div class='slider swiper-slide'>
+                                                <div class='iconSlider'>
+                                                    <i class='bi bi-quote'></i>
+                                                </div>
+                                                <div class='msgSlider'>
+                                                    <p>$msg</p>
+                                                </div>
+                                                <!-- imagem e nome do usuário -->
+                                                <div class='userInfo'>
+                                                    <img class='icon-login' src='_imagens/users/$foto_comment'>
+                                                    <p class='namePerson'>$nome_comment</p>
+                                                </div>
+                                            </div>
+                                            ";
+                                            unset($data3);
+                                            
+                                        }
+                                    }
+                                    unset($data2);
+                                }catch(PDOException $e) {
+                                    $z='';
+                                    echo 'ERROR: ' . $e->getMessage();
+                                }
+                            ?>
+                    </div>
+                    <!-- botões de navegação do slider -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </section>
+                <!-- botão de ativação do feed para dispositivos móveis -->
+                <div class="openComents" onclick="openFeed()"><i class="bi bi-menu-up" id="iconFeed"></i></div>
+            </div>
+        </div>
+        <!-- botão para fechar a janela -->
+        <div class="btnClose-feedback">
+            <button class="btnClose-feed">
+                <span class="material-symbols-outlined" id="btnClose-feed">
+                    close
+                </span>
+            </button>
+        </div>
+    </div>
     <!-- Cabeçalho -->
     <header id="header">
         <!-- Logo -->
@@ -58,7 +196,11 @@
                     shopping_cart
                 </span>
             </div>
-
+            <div class="chat" onclick="openChat()">
+                <span class="material-symbols-outlined icon">
+                    chat
+                </span>
+            </div>
             <?php
                 //-- Mudar entre Cadastrar/Entrar e Perfil de Usuário
                 if($logon){
@@ -288,6 +430,8 @@
         </div>
     </footer>
     <script src="_scripts/main.js"></script>
+    <script src="_scripts/swiper-bundle.min.js"></script>
+    <script src="_scripts/slider.js"></script>
 </body>
 
 </html>

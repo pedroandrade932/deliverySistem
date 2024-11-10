@@ -93,7 +93,7 @@ try {
                 echo '<script charset="utf-8">alert("Nome de usuário incorreto.")</script>';
             }
         }
-        unset($data);
+        unset($conn);
     }
 }catch(PDOException $e) {
     $z='';

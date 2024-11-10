@@ -9,7 +9,7 @@
 
 :root{
     --header: #F92140;
-    --cor-secundaria: #810012;
+    --cor-secundaria: #810012; 
     --fonte-principal: 'junge';
 }
 #header{
@@ -73,6 +73,7 @@
     font-family: sans-serif;
     transition: 0.2s;
 }
+
 
 .banner, .banner img{
     width: 100%;
