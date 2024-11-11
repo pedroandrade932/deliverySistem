@@ -1,7 +1,7 @@
 <?php
-include '_php/crypto.php';
-include '_php/id_user.php';
-include '_php/crop_image.php';
+include '../_php/crypto.php';
+include '../_php/id_user.php';
+include '../_php/crop_image.php';
 
 session_start();
 $nome = $_SESSION['user_name'];
@@ -37,11 +37,11 @@ if (!isset($_SESSION['code'])){
 
 # Dados de conexão
 $host = "localhost";
-$username = "ialuana_tocomfome_root";
-$password = "<Ma3t3mcaf3?>";
+$username = "root";
+$password = "";
 
 # Nome do bd
-$dbase = "ialuana_tocomfome";
+$dbase = "tocomfome";
 
 
 try {
@@ -81,13 +81,13 @@ try {
         $_SESSION['user_adm'] = $user_adm;
         echo
         '<!DOCTYPE html>
-        <html lang="en">
+        <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Lunaris</title>
-            <link rel="stylesheet" href="_styles/logonStyle.css">
-            <link rel="shortcut icon" href="_imagens/sistema/logo.png" type="image/x-icon">
+            <link rel="stylesheet" href="../_styles/logonStyle.css">
+            <link rel="shortcut icon" href="../_imagens/sistema/logo.png" type="image/x-icon">
             <meta http-equiv="refresh" content="0;URL=confcad">
         </head>
         <body>
@@ -108,8 +108,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tô Com Fome</title>
-    <link rel="stylesheet" href="styles/logonStyle.css">
-    <link rel="shortcut icon" href="_imagens/sistema/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/logonStyle.css">
+    <link rel="shortcut icon" href="../_imagens/sistema/logo.png" type="image/x-icon">
 </head>
 <body id = "validation">
     <header>

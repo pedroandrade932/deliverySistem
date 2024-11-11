@@ -1,16 +1,16 @@
 <?php
-include '_php/crypto.php';
-include '_php/id_user.php';
-include '_php/crop_image.php';
+include '../_php/crypto.php';
+include '../_php/id_user.php';
+include '../_php/crop_image.php';
 session_start();
 
 # Dados de conexão
 $host = "localhost";
-$username = "ialuana_tocomfome_root";
-$password = "<Ma3t3mcaf3?>";
+$username = "root";
+$password = "";
 
 # Nome do bd
-$dbase = "ialuana_tocomfome";
+$dbase = "tocomfome";
 
 try {
     $nome = $_POST['user_name'];
@@ -58,10 +58,10 @@ try {
         }else{
             if ($imagem['tmp_name']) {
                 $nome_img = $nome.'-'.time().'.jpg';
-                if (move_uploaded_file($imagem['tmp_name'], '_imagens/users/'.$nome_img)) {
+                if (move_uploaded_file($imagem['tmp_name'], '../_imagens/users/'.$nome_img)) {
                                         
                     $data = $conn->query("INSERT INTO usuario (iduser, nome, email, senha, foto, active, adm) VALUES ($userid, '$nome', '$emailcript', '$senhacript', '$nome_img', 0, 0)");
-                    resize_crop_image(600, 600, '_imagens/users/'.$nome_img, '_imagens/users/'.$nome_img);
+                    resize_crop_image(600, 600, '../_imagens/users/'.$nome_img, '../_imagens/users/'.$nome_img);
                     
                     $_SESSION['user_name'] = $nome;
                     $_SESSION['user_email'] = $email;
@@ -72,8 +72,8 @@ try {
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>Tô Com Fome - Validação de Email</title>
-                        <link rel="stylesheet" href="styles/logonStyle.css">
-                        <link rel="shortcut icon" href="_imagens/sistema/logo.png" type="image/x-icon">
+                        <link rel="stylesheet" href="../styles/logonStyle.css">
+                        <link rel="shortcut icon" href="../_imagens/sistema/logo.png" type="image/x-icon">
                         <meta http-equiv="refresh" content="0;URL=validation" />
                     </head>
                     <body>
@@ -99,8 +99,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tô Com Fome - Cadastro</title>
-    <link rel="stylesheet" href="styles/logonStyle.css">
-    <link rel="shortcut icon" href="_imagens/sistema/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/logonStyle.css">
+    <link rel="shortcut icon" href="../_imagens/sistema/logo.png" type="image/x-icon">
 </head>
 <header></header>
 <body id = "validation">
@@ -117,7 +117,7 @@ try {
                                         
                     <div>
                         <label for = "email"><ion-icon name="mail-outline"></ion-icon> E-mail: </label>
-                        <input type = "email" class = "campo" id = "email" name = "email" required maxlength="40" placeholder = "example@email.com"> <br>
+                        <input type = "email" class = "campo" id = "email" name = "email" required maxlength="80" placeholder = "example@email.com"> <br>
                     </div>
                     
                     <div>

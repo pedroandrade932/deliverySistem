@@ -1,16 +1,16 @@
 <?php
 //-- Funções Legais
-include '_php/is_email.php';
-include '_php/crypto.php';
+include '../_php/is_email.php';
+include '../_php/crypto.php';
 session_start(); // Inicia a sessão
 
 # Dados de conexão
 $host = "localhost";
-$username = "ialuana_tocomfome_root";
-$password = "<Ma3t3mcaf3?>";
+$username = "root";
+$password = "";
 
 # Nome do bd
-$dbase = "ialuana_tocomfome";
+$dbase = "tocomfome";
 
 
 try {
@@ -55,7 +55,7 @@ try {
             //}else {
                 $membro = false;
             //}
-            if (!file_exists("_imagens/users/$user_img")){
+            if (!file_exists("../_imagens/users/$user_img")){
                 $user_img = 'LUNARIS.png';
             }
             if ($nomecad == $nome){
@@ -93,7 +93,7 @@ try {
                 echo '<script charset="utf-8">alert("Nome de usuário incorreto.")</script>';
             }
         }
-        unset($data);
+        unset($conn);
     }
 }catch(PDOException $e) {
     $z='';
@@ -106,8 +106,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tô Com Fome - Entrar</title>
-    <link rel="stylesheet" href="styles/logonStyle.css">
-    <link rel="shortcut icon" href="_imagens/sistema/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/logonStyle.css">
+    <link rel="shortcut icon" href="../_imagens/sistema/logo.png" type="image/x-icon">
 </head>
 <body id = "validation">
     <main>
@@ -119,7 +119,7 @@ try {
             <form id="normal" action="login" method="post" enctype="multipart/form-data">
                 <div>
                     <label for = "nome"><ion-icon name="person-outline"></ion-icon> Usuário<div id="obri">*</div>: </label>
-                    <input type = "text" class = "campo" id = "nome" name = "user_name" required autofocus maxlength="30" placeholder = "Nome ou E-mail"> <br>
+                    <input type = "text" class = "campo" id = "nome" name = "user_name" required autofocus maxlength="80" placeholder = "Nome ou E-mail"> <br>
                 </div>
                 <div>
                     <label for = "senha"><ion-icon name="lock-closed-outline"></ion-icon> Senha<div id="obri">*</div>: </label>

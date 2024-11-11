@@ -5,7 +5,7 @@ class Crypto{
     private $metodo;
 
     function __construct(){
-        $this->senha = '<bds3md4d0s!?>';
+        $this->senha = '';
         $this->metodo = 'camellia-192-cfb8';
     }
     function cript($mensagem) {

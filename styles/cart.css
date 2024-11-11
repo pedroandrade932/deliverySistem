@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Itim&family=Junge&display=swap');
+
+:root{
+    --fonte-principal:'Junge';
+}
+
+.section{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px ;
+    width: 0;
+    padding: 13px;
+    border-radius: 15px;
+    transition: .4s cubic-bezier(1, 0.01, 0, 1.46);
+}
+.janelaCarrinho.ativeCart .section{
+    width: 90%;
+}
+.itens{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    font-family: var(--fonte-principal);
+    background-color: #F0F0EB ;
+    align-items: center;
+    border-radius: 15px;
+}
+.itens .variavel-itens{
+    padding-left: 20px;
+}
+.mini-textos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 37px;
+    width: 100% ;
+    font-family: var(--fonte-principal);
+    background-color: white;
+}
+.mini-textos .valor{
+    padding-right: 20px;
+}
+.mini-textos .item{
+    padding-left: 40px;
+}
+.alimentos{
+    display: grid;
+    width: 100%;
+    background-color: #F0F0EB; 
+    border-radius: 15px;   
+}
+.textos{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.img-pedidos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.img-pedidos img{
+    padding: 10px;
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    
+}
+.pedidos{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 50px;
+    
+    font-family: var(--fonte-principal);
+}
+.precos{
+    padding-right: 10px;
+}
+.informacoes{
+    display: grid;
+    width: 100%;
+    grid-row: auto;
+    gap: 20px;
+}
+.pagamentos{
+    display: grid;
+    grid-template-rows: auto   ;
+    width: 100%;
+    background-color: #F0F0EB;
+    font-family: var(--fonte-principal);
+    border-radius: 15px;
+}
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.pagamentos h1{
+    font-size: 40px;
+    margin: 20px 0 0 0 ;
+    font-family:var(--fonte-principal);
+}
+.linha{
+    border: 0;
+    width: 90%;
+    height: 2px;
+    background-color: black;
+}
+.descricao{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    padding-top: 30px;
+    
+}
+.categoria{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.textos-pagamento{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+}
+.variavel-pagamento{
+    padding-right: 50px;
+}
+.textos-pagamento .item-clicavel{
+    text-decoration: underline;
+}
+.categoria .textos-pagamento hr{
+    border: 0;
+    width: 70%;
+    height: 2px;
+    background-color: black;
+}
+.valor-total{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #D9D9D9;
+    margin-top:30px;
+}
+.valor-total h2{
+    padding-left:10px ;
+    margin: 5px;
+}
+.valor-total h3{
+    padding-right: 50px;
+    margin: 0;
+}
+.botoes-pagamento{
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+}
+.btnCart{
+    display: flex;
+    border-radius: 10px;
+    text-decoration: none;
+    width:140px;
+    height: 46px;
+    background-color: #D9D9D9;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 3px solid #185218;
+    background-color: green;
+    color: white;
+    font-family: var(--fonte-principal);
+    padding: 10px;
+}
+.btnCart:hover{
+    box-shadow: 1px 1px 12px green;
+    transition: .4s;
+}
+.botoes-pagamento h2{
+    padding-left:10px ;
+    text-decoration: underline;
+    border-radius: 15px;
+}
+.entrega{
+    display: grid;
+    grid-template-rows: auto;
+    background-color: #F0F0EB;
+    font-family: var(--fonte-principal);
+    border-radius: 15px;
+}
+.endereco{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.endereco h2{
+    padding-left: 10px;
+    margin: 10px 0 5px 0;
+}
+
+input{
+    width: 90%;
+    height: 30px;
+    border: 0;
+}
+.botoes-entrega{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between ;
+    align-items: center;
+    background-color: #D9D9D9;
+    margin-top: 10px;
+    border-radius: 0px 0px 15px 15px;
+    padding: 10px;
+}
+.botoes-entrega h2{
+    text-decoration: underline;
+    padding:0 20px 0 20px;
+    margin: 10px;
+}
+.janelaCarrinho{
+    position: fixed;
+    background-color: #000000a8;
+    backdrop-filter: blur(10px);
+    bottom: 0;
+    z-index: 999;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: .4s ease-in-out;
+}
+.janelaCarrinho.ativeCart{
+    display: flex;
+    height: 91vh;
+    overflow: visible;
+    visibility: visible;
+}
+.modalCarrinho{
+    overflow-y: scroll;
+    height: 94%;
+}
+.modalCartBody{
+    display: flex;
+    justify-content: center;
+}
+.btnCloseCart{
+    position: absolute;
+    top: -40px;
+    z-index: 9999;
+    right: 46%;
+}
+.btnClose-cart{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: close_Cart_Animate .8s ease-in-out infinite;
+}
+.btnClose-cart:hover{
+    animation: none;
+}
+#closeCart{
+    padding: 10px;
+}
+@keyframes close_Cart_Animate {
+    0% {
+        transform: rotateY(10deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+@media(max-width:550px){
+   
+    .section{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        object-fit: contain;
+        align-items: center;
+        padding: 0;
+    }
+    .pedidos, .img-pedidos{
+        flex-direction: column;
+        text-align: center;
+    }
+    .mini-textos{
+        display: none;
+    }
+    .itens .variavel-itens{
+        display: none;
+    }
+    .itens{
+        justify-content: center;
+        border-bottom: 2px solid black;
+    }
+    
+}
