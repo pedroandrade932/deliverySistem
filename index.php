@@ -32,11 +32,11 @@
 
 # Dados de conexão
 $host = "localhost";
-$username = "root";
-$password = "";
+$username = "ialuana_tocomfome_root";
+$password = "<Ma3t3mcaf3?>";
 
 # Nome do bd
-$dbase = "tocomfome";
+$dbase = "ialuana_tocomfome";
 
 try {
     $comment = $_POST["msg"];
@@ -415,7 +415,7 @@ try {
                                 <a href=''>Conta</a>
                             </li>
                             <li>
-                                Configurações
+                                <a href='pages/logout'>Logout</a>
                             </li>
                         </ul>
                     </div>
