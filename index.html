@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/homePage.css">
     <link rel="stylesheet" href="styles/itemFilter.css">
     <link rel="stylesheet" href="styles/feedback.css">
+    <link rel="stylesheet" href="styles/cart.css">
     <link rel="stylesheet" href="styles/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -119,7 +120,7 @@
                 </span>
             </div>
             <div class="carrinho">
-                <span class="material-symbols-outlined icon">
+                <span class="material-symbols-outlined icon" onclick="openCart()">
                     shopping_cart
                 </span>
             </div>
@@ -332,6 +333,146 @@
             </div>
         </div>
     </div>
+    <!-- Janela modal do carrinho -->
+     
+     <div class="janelaCarrinho" id="janelaCarrinho">
+        <div class="modalCarrinho">
+            <div class="modalCartBody">
+                <div class="btnCloseCart">
+                    <button class="btnClose-cart">
+                        <span class="material-symbols-outlined" id="closeCart">
+                        close
+                        </span>
+                    </button>
+                 </div>
+                <div class="section">
+    
+        
+                    <div class="alimentos">
+                        <div class="textos">
+                            <div class="itens">
+                                <h1>Meu carrinho</h1>
+                                <h1 class="variavel-itens">(X itens)</h1>  
+                            </div>
+                            
+                            <div class="mini-textos">
+                                <h3 class="item">Item</h3>
+                                <h3 class="valor">Valor</h3>
+                            </div>
+            
+                        </div>
+                        
+                        <!-- Nas divs abaixo são gerados os pedidos, com a imagem, descrição e valor-->
+                        <div class="pedidos">
+                            <div class="img-pedidos">
+                                <img src="_imagens/sistema/cardCart/Pizza Bacon com Abacaxi.jpg" alt="Pizazinha massa" height="115px">
+                                <h2>Pizza </h2> 
+                            </div>
+                            <div class="precos">
+                                <h3>140,00</h2>
+                            </div>
+                        </div>
+                                
+                        <div class="pedidos">
+                            <div class="img-pedidos">
+                                <img src="_imagens/sistema/cardCart/Pizza Doce.jpg" alt="" height="115px">
+                                <h2>Pizza doce de granulado de chocolate com morango </h2>
+                            </div>
+                            <div class="precos"> 
+                                <h3>100,00</h3>
+                            </div>
+                        </div>
+            
+                        <div class="pedidos">
+                            <div class="img-pedidos">
+                                <img src="_imagens/sistema/cardCart/Refrigerante-Coca-Cola-2-Litros.png" alt="" height="115px">
+                                <h2>Refrigerante Coca-Cola 2 Litros</h2>
+                            </div>    
+                            <div class="precos">
+                                <h3>50,00</h3>
+                            </div>
+                        </div>
+                        
+                    </div>
+            
+                    <div class="informacoes">
+            
+                        <div class="pagamentos">
+            
+                            <div class="titulo">
+                                <h1>Pagamento</h1>
+                                <hr class="linha">
+                            </div>
+                            <!-- Nesta div serão gerados as variáveis do carrinho, os itens, os cupons e o desconto (com base nos cupons) -->
+                            <div class="descricao">
+                                <div class="categoria">
+                                    <div class="textos-pagamento">
+                                        <h2>Itens (x itens)</h2>
+                                    </div> 
+                                    <div class="variavel-pagamento">
+                                        <h3>400,00</h3>
+                                    </div>   
+                                </div>
+            
+                                <div class="categoria">
+                                    <div class="textos-pagamento">
+                                        <h2 class="item-clicavel">Inserir cupom</h2>
+                                    </div>
+                                    <div class="variavel-pagamento">
+                                        <h3>x cupons</h3>
+                                    </div>
+                                </div>
+            
+                                <div class="categoria">
+                                    <div class="textos-pagamento">
+                                        <h2>Desconto</h2>
+                                    </div>
+                                    <div class="variavel-pagamento">
+                                        <h3>50,00</h3>
+                                    </div>
+                                </div>
+            
+                            </div>
+                            <!-- Aqui será gerado o valor com base nas variáveis -->
+                            <div class="valor-total">
+                                <h2>Total</h2>
+                                <h3>400,00</h3>
+                            </div>
+            
+                            <div class="botoes-pagamento">
+                                <button class="btnCart">Continuar Comprando</button>
+                                <div>
+                                    <button class="botao-finalizar btnCart">Finalizar</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Informações de entrega -->
+                        <div class="entrega">
+            
+                            <div class="endereco">
+                                <h2>Endereço</h2>
+                                <input type="text" placeholder="Informe o seu endereço" >
+                            </div>
+            
+                            <div class="endereco">
+                                <h2>Complemento</h2>
+                                <input type="text" placeholder="Diga um complemento(opcional)">
+                            </div>
+            
+                            <div class="botoes-entrega">
+                                <button class="Salvar btnCart">Salvar</button>
+                                <button class="Acompanhar btnCart">Acompanhar Pedido</button>
+                            </div>
+                            
+                        </div>
+            
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+     </div>
     <footer>
         <div class="copy">
             SODEF &copy;2024

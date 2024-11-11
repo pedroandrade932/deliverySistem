@@ -87,6 +87,19 @@ function openFeed(){
     contentChat.classList.toggle('ativeFeed');
 }
 
+//Funcionalidade da janela modal do carrinho
+const windowCart = document.getElementById('janelaCarrinho');
+const closeCart = document.getElementById('closeCart');
+function openCart(){
+    windowCart.classList.add('ativeCart');
+}
+windowCart.addEventListener('click', (element) => {
+    if(element.target.id === 'closeCart'){
+        windowCart.classList.remove('ativeCart');
+    }
+})
+
+
 
 
 
